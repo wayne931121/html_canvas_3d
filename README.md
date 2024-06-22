@@ -30,5 +30,8 @@ const sin = function(radian){return Math.sin(radian);}
 const cos = function(radian){return Math.cos(radian);}
 const radian = function(angle){return angle*Math.PI/180;}
 ```
-Also See:
-https://en.wikipedia.org/wiki/Rotation_matrix
+Also See:<br>
+https://en.wikipedia.org/wiki/Rotation_matrix<br>
+https://www.geogebra.org/classic/tyeaC3WS<br>
+https://www.geogebra.org/3d/rfegqba8<br>
+https://youtu.be/U0_ONQQ5ZNM?si=bPz4oSSNwQVz5KON
