@@ -19,7 +19,7 @@ function draw(){
 }
 
 let r = 45;
-const a = new pixel(r,0,0);
+const a = new pixel(r);
 degreeX.max = canvas.width+r*2 , degreeX.min = -r*2;
 degreeY.max = canvas.height+r*2, degreeY.min = -r*2;
 
@@ -51,8 +51,8 @@ window.onload = (e)=> {
   timeid = setInterval(drawAll,10);
 }
 
-function reset(){
-  a.reset();
+function Reset(){
+  a.Reset();
   bindToInput(a);
 }
 

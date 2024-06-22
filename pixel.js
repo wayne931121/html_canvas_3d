@@ -7,8 +7,8 @@ class pixel{
   speed=1;
   yaw=[0,0,0];
   screen_distance_from_eye=3000;
-  constructor(a,x,y){
-	this.r = a;
+  constructor(r){
+	this.r = r;
   }
   draw(){
 	  this.drawRect();
@@ -30,9 +30,9 @@ class pixel{
   }
   detect(a,b){
   }
-  reset(){
+  Reset(){
     this.x=300;
-    this.y=100;
+    this.y=162;
     this.z=2100;// z > 2*r
     this.yaw=[0,0,0];
   }
@@ -168,6 +168,23 @@ class pixel{
 	this.planePoints.push([b,f,e,a,"green"]);
 	//this.planePoints.push([d,h,g,c,"white"]); 在裡面的面看不到
   }
+  angleHV(cosA,sinA,h,v){
+	  /*javascript not tuple(1,1,1), is array [1,1,1]*/
+	  return [h*cosA-v*sinA, h*sinA+v*cosA];
+  }
+  tryDraw(p){
+	let a=radian(this.yaw[0]), b=radian(this.yaw[1]), c=radian(this.yaw[2]), x=p[0], y=p[1], z=p[2];
+	let cosA=cos(a),sinA=sin(a), cosB=cos(b),sinB=sin(b), cosC=cos(c),sinC=sin(c);
+	let zy, xz, xy;
+	zy = this.angleHV(cosA,sinA,z,y); //轉動zy平面，等於轉動x軸，x不變
+	xz = this.angleHV(cosB,sinB,x,zy[0]); //轉動xz平面，等於轉動y軸，y不變
+	xy = this.angleHV(cosC,sinC,xz[0],zy[1]); //轉動xy平面，等於轉動z軸，z不變
+	p = [xy[0],xy[1],xz[1]];
+	p = this.eyes(p);
+	//this.drawPoint(p);
+	return p;
+  }
+  /*
   tryDraw(p){
 	let a=radian(this.yaw[0]), b=radian(this.yaw[1]), c=radian(this.yaw[2]), x=p[0], y=p[1], z=p[2];
 	//console.log(x,y);
@@ -180,7 +197,7 @@ class pixel{
 	p = this.eyes(p);
 	//this.drawPoint(p);
 	return p;
-  }
+  }*/
   eyes(position){
     /*
 	<!--
