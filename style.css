@@ -1,0 +1,11 @@
+body{
+    text-align: center;
+}
+.change{
+    position: fixed;
+    top: 30vh;
+	left: 3vw;
+}
+canvas{
+	border:1px solid grey;
+}

@@ -1,0 +1,26 @@
+rA={
+(mA(1) cos(az)-mA(2) sin(az)) cos(ay)+mA(3) sin(ay),
+(mA(1) sin(az)+mA(2) cos(az)) cos(ax)-(mA(3) cos(ay)-(mA(1) cos(az)-mA(2) sin(az)) sin(ay)) sin(ax),
+(mA(1) sin(az)+mA(2) cos(az)) sin(ax)+(mA(3) cos(ay)-(mA(1) cos(az)-mA(2) sin(az)) sin(ay)) cos(ax)
+}
+
+rA={
+(x*cos(az)-y*sin(az))*cos(ay)+z*sin(ay),
+(x*sin(az)+y*cos(az))*cos(ax)-(z*cos(ay)-(x*cos(az)-y*sin(az))*sin(ay))*sin(ax),
+(x*sin(az)+y*cos(az))*sin(ax)+(z*cos(ay)-(x*cos(az)-y*sin(az))*sin(ay))*cos(ax)
+}
+
+x = (x*cos(az)-y*sin(az))*cos(ay)+z*sin(ay)
+  = x*cos(az)*cos(ay) - y*sin(az)*cos(ay) + z*sin(ay)
+
+y = (x*sin(az)+y*cos(az))*cos(ax)-(z*cos(ay)-(x*cos(az)-y*sin(az))*sin(ay))*sin(ax)
+  = x*sin(az)*cos(ax)+y*cos(az)*cos(ax)-(z*cos(ay)*sin(ax)-(x*cos(az)-y*sin(az))*sin(ay)*sin(ax))
+  = x*sin(az)*cos(ax)+y*cos(az)*cos(ax)-(z*cos(ay)*sin(ax)-(x*cos(az)*sin(ay)*sin(ax)-y*sin(az)*sin(ay)*sin(ax)))
+  = x*sin(az)*cos(ax)+y*cos(az)*cos(ax)-(z*cos(ay)*sin(ax)-x*cos(az)*sin(ay)*sin(ax)+y*sin(az)*sin(ay)*sin(ax))
+  = x*sin(az)*cos(ax)+y*cos(az)*cos(ax)-z*cos(ay)*sin(ax)+x*cos(az)*sin(ay)*sin(ax)-y*sin(az)*sin(ay)*sin(ax)
+  = x*(sin(az)*cos(ax)+cos(az)*sin(ay)*sin(ax))+y*(cos(az)*cos(ax)-sin(az)*sin(ay)*sin(ax))-z*cos(ay)*sin(ax)
+
+z = ...
+
+(rA_1(1) eyesDistance / (adz - rA_1(3)), rA_1(2) eyesDistance / (adz - rA_1(3)), adz - eyesDistance)
+(x eyesDistance / (adz - z), y eyesDistance / (adz - z), adz - eyesDistance)

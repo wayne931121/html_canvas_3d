@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+<title>HTML5 Canvas Draw Image</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<div class="change">
+x<input type="range" id="degreeX" name="degreeX" min="0" max="100000"><br>
+y<input type="range" id="degreeY" name="degreeY" min="0" max="100000"><br>
+z<input type="range" id="degreeZ" name="degreeZ" min="-90000" max="90000"><br>
+a<input type="range" id="degreeA" name="degreeA" min="0" max="360"><br>
+b<input type="range" id="degreeB" name="degreeB" min="0" max="360"><br>
+c<input type="range" id="degreeC" name="degreeC" min="0" max="360"><br>
+<button onclick="reset();">Reset</button><br>
+</div>
+
+<h1>HTML5 Canvas Draw Image</h1>
+
+<div style="display:none;">
+<!--<img id="scream" width="220" height="auto" src="">-->
+</div>
+
+<canvas id="myCanvas" width="1000" height="570">
+Sorry, your browser does not support canvas.
+</canvas>
+
+<p>
+調整X按向左鍵、向右鍵或A、D鍵，調整Y按向上鍵、向下鍵或W、S鍵，調整Z按N、M鍵，調整角A按F、H鍵，調整角B按T、G鍵，調整角C按V、B鍵。
+</p>
+<script src="math.js"></script>
+<script src="pixel.js"></script>
+<script src="main.js"></script>
+<script src="keyboard.js"></script>
+
+</body>
+</html>
